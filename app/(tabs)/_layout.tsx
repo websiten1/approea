@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import { colors } from '../../src/theme/colors';
 import { fonts } from '../../src/theme/typography';
 import { OrthodoxCross } from '../../src/components/OrthodoxCross';
-import { CalendarIcon, BookIcon, NewsIcon, SoliaIcon } from '../../src/components/icons';
+import { CalendarIcon, BookIcon, NewsIcon, SoliaIcon, EventsIcon, SettingsIcon } from '../../src/components/icons';
 
 export default function TabsLayout() {
   return (
@@ -42,6 +42,13 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="evenimente"
+        options={{
+          title: 'Evenimente',
+          tabBarIcon: ({ color }) => <EventsIcon color={String(color)} />,
+        }}
+      />
+      <Tabs.Screen
         name="cuvantul"
         options={{
           title: 'Cuvântul Episcopului',
@@ -61,6 +68,13 @@ export default function TabsLayout() {
         options={{
           title: 'Solia',
           tabBarIcon: ({ color }) => <SoliaIcon color={String(color)} />,
+        }}
+      />
+      <Tabs.Screen
+        name="admin"
+        options={{
+          title: 'Admin',
+          tabBarIcon: ({ color }) => <SettingsIcon color={String(color)} />,
         }}
       />
     </Tabs>
