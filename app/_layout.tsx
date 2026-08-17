@@ -3,13 +3,16 @@ import { Stack } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
+import { useFonts, Cinzel_400Regular, Cinzel_700Bold } from '@expo-google-fonts/cinzel';
 import {
-  useFonts,
-  PTSerif_400Regular,
-  PTSerif_400Regular_Italic,
-  PTSerif_700Bold,
-} from '@expo-google-fonts/pt-serif';
-import { PTSans_400Regular, PTSans_700Bold } from '@expo-google-fonts/pt-sans';
+  PlayfairDisplay_400Regular,
+  PlayfairDisplay_700Bold,
+} from '@expo-google-fonts/playfair-display';
+import {
+  CormorantGaramond_400Regular,
+  CormorantGaramond_400Regular_Italic,
+  CormorantGaramond_600SemiBold,
+} from '@expo-google-fonts/cormorant-garamond';
 import { View } from 'react-native';
 import { colors } from '../src/theme/colors';
 
@@ -17,11 +20,13 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
-    PTSerif_400Regular,
-    PTSerif_400Regular_Italic,
-    PTSerif_700Bold,
-    PTSans_400Regular,
-    PTSans_700Bold,
+    Cinzel_400Regular,
+    Cinzel_700Bold,
+    PlayfairDisplay_400Regular,
+    PlayfairDisplay_700Bold,
+    CormorantGaramond_400Regular,
+    CormorantGaramond_400Regular_Italic,
+    CormorantGaramond_600SemiBold,
   });
 
   const onLayoutRootView = useCallback(async () => {

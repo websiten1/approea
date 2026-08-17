@@ -1,13 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Screen } from './Screen';
 import { OrthodoxCross } from './OrthodoxCross';
-import { Divider } from './Divider';
 import { colors } from '../theme/colors';
 import { spacing } from '../theme/spacing';
 import { type as textType, fonts } from '../theme/typography';
 
 interface Props {
-  title: string;
+  title?: string;
   message?: string;
 }
 
@@ -15,11 +14,11 @@ export function ComingSoon({ title, message }: Props) {
   return (
     <Screen scroll={false}>
       <View style={styles.center}>
-        <OrthodoxCross color={colors.gold} size={30} strokeWidth={1.6} />
-        <Text style={styles.title}>{title}</Text>
-        <Divider />
+        <OrthodoxCross color={colors.ink} size={28} strokeWidth={1.4} />
+        <Text style={styles.title}>{title ?? 'Această secțiune urmează a fi refăcută'}</Text>
         <Text style={styles.message}>
-          {message ?? 'Această secțiune este în pregătire și va fi disponibilă într-o versiune ulterioară.'}
+          {message ??
+            'Designul complet va fi aplicat după aprobarea paletei și a tipografiei pe ecranele „Astăzi" și „Calendar".'}
         </Text>
       </View>
     </Screen>
@@ -35,7 +34,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: fonts.serifBold,
-    fontSize: 22,
+    fontSize: 26,
+    lineHeight: 32,
     color: colors.ink,
     marginTop: spacing.md,
     textAlign: 'center',
@@ -44,5 +44,6 @@ const styles = StyleSheet.create({
     ...textType.body,
     color: colors.inkSoft,
     textAlign: 'center',
+    marginTop: spacing.sm,
   },
 });

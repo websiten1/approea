@@ -34,9 +34,11 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   title: {
-    fontFamily: fonts.serifBold,
-    fontSize: 21,
-    color: colors.ink,
+    fontFamily: fonts.sansBold,
+    fontSize: 20,
+    letterSpacing: 5,
+    textTransform: 'uppercase',
+    color: colors.byzantine,
     marginHorizontal: 24,
     minWidth: 170,
     textAlign: 'center',
@@ -50,6 +52,6 @@ const styles = StyleSheet.create({
   arrow: {
     fontFamily: fonts.serifBold,
     fontSize: 24,
-    color: colors.gold,
+    color: colors.inkFaint,
   },
 });

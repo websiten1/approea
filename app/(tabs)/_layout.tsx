@@ -1,28 +1,14 @@
-import { Tabs } from 'expo-router';
-import { Platform } from 'react-native';
-import { colors } from '../../src/theme/colors';
-import { fonts } from '../../src/theme/typography';
+import { Tabs } from 'expo-router/js-tabs';
 import { OrthodoxCross } from '../../src/components/OrthodoxCross';
 import { CalendarIcon, BookIcon, NewsIcon, SoliaIcon, EventsIcon, SettingsIcon } from '../../src/components/icons';
+import { BottomNav } from '../../src/components/BottomNav';
 
 export default function TabsLayout() {
   return (
     <Tabs
+      tabBar={(props) => <BottomNav {...props} />}
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.wine,
-        tabBarInactiveTintColor: colors.inkFaint,
-        tabBarStyle: {
-          backgroundColor: colors.ivory,
-          borderTopColor: colors.border,
-          borderTopWidth: StyleSheetHairline,
-          height: Platform.OS === 'ios' ? 88 : 64,
-          paddingTop: 8,
-        },
-        tabBarLabelStyle: {
-          fontFamily: fonts.sansRegular,
-          fontSize: 11,
-        },
       }}
     >
       <Tabs.Screen
@@ -51,8 +37,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="cuvantul"
         options={{
-          title: 'Cuvântul Episcopului',
-          tabBarLabel: 'Cuvânt',
+          title: 'Ierarhul',
           tabBarIcon: ({ color }) => <BookIcon color={String(color)} />,
         }}
       />
@@ -80,5 +65,3 @@ export default function TabsLayout() {
     </Tabs>
   );
 }
-
-const StyleSheetHairline = 0.5;

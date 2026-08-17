@@ -34,10 +34,11 @@ export const uiColors = {
   input: colors.border,
   ring: colors.gold,
 
-  // Named accents referenced by the legacy Masthead/Playful/SectionLabel components.
-  sage: '#8A9A73',
-  soliaBlue: '#3E6491',
-  soliaRed: '#B23A2E',
+  // Named accents referenced by the Masthead/Playful/SectionLabel components — exact
+  // values extracted from the live Base44 app (getComputedStyle on solia-faith-link.base44.app).
+  sage: '#65834D',
+  soliaBlue: '#244F7F',
+  soliaRed: '#A6473B',
 } as const;
 
 export type UiColorToken = keyof typeof uiColors;

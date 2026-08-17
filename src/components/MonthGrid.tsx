@@ -36,6 +36,7 @@ export function MonthGrid({ year, month, selectedIso, onSelect }: Props) {
           const liturgical = getLiturgicalDay(iso);
           const isToday = iso === todayIso;
           const isSelected = iso === selectedIso;
+          const isActive = isToday || isSelected;
           const feastColor = liturgical ? feastRankColor(liturgical.feastRank) : 'transparent';
           const hasFeast = liturgical ? isFeastDay(liturgical.feastRank) : false;
           const hasEvent = eventDates.has(iso);
@@ -47,29 +48,20 @@ export function MonthGrid({ year, month, selectedIso, onSelect }: Props) {
               onPress={() => onSelect(iso)}
               hitSlop={2}
             >
-              <View
-                style={[
-                  styles.cell,
-                  isToday && styles.cellToday,
-                  isSelected && !isToday && styles.cellSelected,
-                ]}
-              >
+              <View style={[styles.cell, isActive && styles.cellActive]}>
                 <Text
                   style={[
                     styles.cellText,
                     !inMonth && styles.cellTextMuted,
-                    isToday && styles.cellTextToday,
-                    hasFeast && inMonth && !isToday && { color: feastColor },
+                    hasFeast && inMonth && { color: feastColor },
                   ]}
                 >
                   {date.getDate()}
                 </Text>
                 <View style={styles.markRow}>
-                  {hasFeast && inMonth && (
-                    <View style={[styles.mark, { backgroundColor: isToday ? colors.ivory : feastColor }]} />
-                  )}
+                  {hasFeast && inMonth && <View style={[styles.mark, { backgroundColor: feastColor }]} />}
                   {hasEvent && inMonth && (
-                    <View style={[styles.mark, styles.eventMark, { backgroundColor: isToday ? colors.ivory : colors.gold }]} />
+                    <View style={[styles.mark, styles.eventMark, { backgroundColor: colors.gold }]} />
                   )}
                 </View>
               </View>
@@ -108,16 +100,12 @@ const styles = StyleSheet.create({
   cell: {
     width: CELL_SIZE,
     height: CELL_SIZE,
-    borderRadius: CELL_SIZE / 2,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  cellToday: {
-    backgroundColor: colors.wine,
-  },
-  cellSelected: {
-    borderWidth: 1.2,
-    borderColor: colors.gold,
+  cellActive: {
+    borderBottomWidth: 1.5,
+    borderBottomColor: colors.ink,
   },
   cellText: {
     fontFamily: fonts.serifRegular,
@@ -126,11 +114,7 @@ const styles = StyleSheet.create({
   },
   cellTextMuted: {
     color: colors.inkFaint,
-    opacity: 0.4,
-  },
-  cellTextToday: {
-    color: colors.ivory,
-    fontFamily: fonts.serifBold,
+    opacity: 0.5,
   },
   markRow: {
     flexDirection: 'row',

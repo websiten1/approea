@@ -1,43 +1,44 @@
 export const colors = {
-  // fundal
-  cream: '#F7F1E4',
-  creamAlt: '#EFE4CC',
-  ivory: '#FBF8F1',
+  // fundal — alb, ca în aplicația Base44
+  cream: '#FFFFFF',
+  creamAlt: '#FAFAFA',
+  ivory: '#FFFFFF',
 
-  // bordo / vișiniu — culoare principală, veșminte arhierești
-  wine: '#5C1220',
-  wineDark: '#3B0B15',
-  wineSoft: '#7A2230',
+  // salvie — accent principal (fostă culoare "wine")
+  wine: '#65834D',
+  wineDark: '#4F6B3D',
+  wineSoft: '#8CA377',
 
-  // auriu discret — accent, nu decorativ excesiv
-  gold: '#B08A4E',
-  goldLight: '#D3B675',
-  goldDark: '#8C6B36',
+  // salvie — accent (fostă culoare "gold"; Base44 nu are un al treilea accent,
+  // doar salvie + albastru, alternate pe secțiuni)
+  gold: '#65834D',
+  goldLight: '#8CA377',
+  goldDark: '#4F6B3D',
 
-  // albastru bizantin — accent secundar, folosit rar
-  byzantine: '#1C2A45',
-  byzantineSoft: '#2E3E5C',
+  // albastru "solia" — accent secundar, folosit rar
+  byzantine: '#244F7F',
+  byzantineSoft: '#4A6F99',
 
   // text
-  ink: '#241E19',
-  inkSoft: '#6C5F4F',
-  inkFaint: '#9A8C77',
+  ink: '#000000',
+  inkSoft: 'rgba(0, 0, 0, 0.55)',
+  inkFaint: 'rgba(0, 0, 0, 0.4)',
 
   // linii, separatoare
-  border: '#DCCEA9',
-  borderSoft: '#E8DDBF',
+  border: 'rgba(0, 0, 0, 0.15)',
+  borderSoft: 'rgba(0, 0, 0, 0.08)',
 
   // stări
   white: '#FFFFFF',
-  overlay: 'rgba(36, 30, 25, 0.55)',
+  overlay: 'rgba(0, 0, 0, 0.5)',
 
-  // marcaje calendar liturgic
-  feastGreat: '#B08A4E', // praznic împărătesc / mare sărbătoare — cruce aurie
-  feastMajor: '#5C1220', // sărbătoare importantă — roșu vișiniu
-  feastMinor: '#9A8C77', // sfânt cu cruce neagră — discret
-  fastStrict: '#5C1220', // post aspru
+  // marcaje calendar liturgic — armonizate cu noua paletă alb/salvie/albastru
+  feastGreat: '#B08A4E', // praznic împărătesc / mare sărbătoare — auriu
+  feastMajor: '#A6473B', // sărbătoare importantă — roșu discret
+  feastMinor: 'rgba(0, 0, 0, 0.4)', // sfânt cu pomenire însemnată — discret
+  fastStrict: '#A6473B', // post aspru
   fastOil: '#B08A4E', // dezlegare la ulei
-  fastFish: '#1C2A45', // dezlegare la pește
+  fastFish: '#244F7F', // dezlegare la pește
   fastNone: 'transparent',
 } as const;
 

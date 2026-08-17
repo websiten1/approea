@@ -4,8 +4,9 @@
   "main": "expo-router/entry",
   "dependencies": {
     "@base44/sdk": "^0.8.41",
-    "@expo-google-fonts/pt-sans": "^0.4.1",
-    "@expo-google-fonts/pt-serif": "^0.4.1",
+    "@expo-google-fonts/cinzel": "^0.4.2",
+    "@expo-google-fonts/cormorant-garamond": "^0.4.1",
+    "@expo-google-fonts/playfair-display": "^0.4.2",
     "@expo/metro-runtime": "~57.0.9",
     "expo": "~57.0.12",
     "expo-constants": "~57.0.10",
